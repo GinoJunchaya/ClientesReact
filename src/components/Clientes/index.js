@@ -3,8 +3,6 @@ import Header from './Header';
 import Menu from './Menu';
 import ListaClientes from './ListaClientes';
 import axios from 'axios';
-import ModalFormCliente from './ModalFormCliente';
-import ModalEliminar from './ModalEliminar';
 
 class Clientes extends Component{
 
