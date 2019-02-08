@@ -3,6 +3,7 @@ import Header from './Header';
 import Menu from './Menu';
 import ListaClientes from './ListaClientes';
 import axios from 'axios';
+import ModalFormCliente from './ModalFormCliente';
 
 class Clientes extends Component{
 
@@ -24,6 +25,7 @@ class Clientes extends Component{
                 <Header/>
                 <Menu/>
                 <ListaClientes clientes={this.state.clientes} loading={this.state.loading}/>
+                <ModalFormCliente/>                
             </section>
         );
     }
