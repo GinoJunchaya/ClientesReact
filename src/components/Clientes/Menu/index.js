@@ -5,8 +5,8 @@ class Menu extends Component {
     render() {
         return (
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">
-                    <Button onClick={this.props.showModalRegistrar}>Nuevo cliente</Button>
+                <Navbar.Brand>
+                    <Button>Nuevo cliente</Button>
                 </Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
                 <Form inline>

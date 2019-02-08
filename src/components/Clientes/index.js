@@ -12,12 +12,7 @@ class Clientes extends Component{
         super(props);
         this.state = {
             loading: true,
-            clientes: [],
-            showModalFormCliente: false,
-            showEliminar: false,
-            clienteAccion: undefined,
-            modalEditable: true,
-            modalType: undefined,
+            clientes: []
         }
     }
 
@@ -29,10 +24,8 @@ class Clientes extends Component{
         return(
             <section>
                 <Header/>
-                <Menu showModalRegistrar={this.showModalRegistrar.bind(this)}/>
-                <ModalFormCliente show={this.state.showModalFormCliente} cliente={this.state.clienteAccion} closeModal={this.closeModalFormCliente.bind(this)} modalType={this.state.modalType} getClientes={this.getClientes.bind(this)} editable={this.state.modalEditable}/>
-                <ModalEliminar show={this.state.showEliminar} cliente={this.state.clienteAccion} closeModal={this.closeModalEliminar.bind(this)} getClientes={this.getClientes.bind(this)}/>
-                <ListaClientes clientes={this.state.clientes} loading={this.state.loading} showModalActualizar={this.showModalActualizar.bind(this)} showModalConsultar={this.showModalConsultar.bind(this)} showModalEliminar={this.showModalEliminar.bind(this)}/>
+                <Menu/>
+                <ListaClientes clientes={this.state.clientes} loading={this.state.loading}/>
             </section>
         );
     }
@@ -56,52 +49,7 @@ class Clientes extends Component{
             });
         });
     }
-
-    closeModalFormCliente(){
-        this.setState({showModalFormCliente: false});
-    }
-
-    showModalActualizar(cliente){
-        this.setState({
-            showModalFormCliente: true,
-            modalEditable: true,
-            clienteAccion: cliente,
-            modalType: "A"
-        });
-    }
-
-    showModalEliminar(cliente){
-        this.setState({
-            showEliminar: true,
-            clienteAccion: cliente
-        });
-    }
-
-    closeModalEliminar(){
-        this.setState({
-            showEliminar: false,
-            clienteAccion: undefined
-        });
-    }
-
-    showModalRegistrar(){
-        this.setState({
-            showModalFormCliente: true,
-            modalEditable: true,
-            clienteAccion: undefined,
-            modalType: "R"
-        });
-    }
-
-    showModalConsultar(cliente){
-        this.setState({
-            showModalFormCliente: true,
-            modalEditable: false,
-            clienteAccion: cliente,
-            modalType: "C"
-        });        
-    }
-
+    
 }
 
 export default Clientes;

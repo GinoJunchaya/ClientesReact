@@ -32,14 +32,14 @@ class ListaClientes extends Component {
         var clientes = this.state.clientes;
         var tbodyMostrar = clientes.map( (cliente, k) => (
             <tr key={k} style={{cursor: "pointer"}}>
-                <td onClick={(e) => this.props.showModalConsultar(cliente)}>{cliente.id}</td>
-                <td onClick={(e) => this.props.showModalConsultar(cliente)}>{cliente.razon_social}</td>
-                <td onClick={(e) => this.props.showModalConsultar(cliente)}>{cliente.ruc}</td>
-                <td onClick={(e) => this.props.showModalConsultar(cliente)}>{cliente.telefono}</td>
-                <td onClick={(e) => this.props.showModalConsultar(cliente)}>{cliente.direccion}</td>
+                <td>{cliente.id}</td>
+                <td>{cliente.razon_social}</td>
+                <td>{cliente.ruc}</td>
+                <td>{cliente.telefono}</td>
+                <td>{cliente.direccion}</td>
                 <td>
-                    <Button onClick={(e) => this.props.showModalActualizar(cliente)} variant="info">Editar</Button>&nbsp;&nbsp;
-                    <Button onClick={(e) => this.props.showModalEliminar(cliente)} variant="danger">Eliminar</Button>
+                    <Button variant="info">Editar</Button>&nbsp;&nbsp;
+                    <Button variant="danger">Eliminar</Button>
                 </td>
             </tr>
         ));
