@@ -11,7 +11,10 @@ class Clientes extends Component{
         super(props);
         this.state = {
             loading: true,
-            clientes: []
+            clientes: [],
+            showFormCliente: false,
+            modalEditable: true,
+            clienteAccion: undefined
         }
     }
 
@@ -23,9 +26,13 @@ class Clientes extends Component{
         return(
             <section>
                 <Header/>
-                <Menu/>
+                <Menu showModalRegistrar={this.showModalRegistrar.bind(this)}/>
                 <ListaClientes clientes={this.state.clientes} loading={this.state.loading}/>
-                <ModalFormCliente/>                
+                <ModalFormCliente show={this.state.showFormCliente}
+                                editable={this.state.modalEditable}
+                                cliente={this.state.clienteAccion}
+                                closeModal={this.closeModalFormCliente.bind(this)}
+                                getClientes={this.getClientes.bind(this)}/>
             </section>
         );
     }
@@ -47,6 +54,21 @@ class Clientes extends Component{
                 clientes: [],
                 loading: false
             });
+        });
+    }
+
+    closeModalFormCliente(){
+        this.setState({
+            showFormCliente: false,
+            clienteAccion: undefined
+        });
+    }
+
+    showModalRegistrar(){
+        this.setState({
+            showFormCliente: true,
+            modalEditable: true,
+            clienteAccion: undefined
         });
     }
     

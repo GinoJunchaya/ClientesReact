@@ -6,7 +6,7 @@ class Menu extends Component {
         return (
             <Navbar bg="light" variant="light">
                 <Navbar.Brand>
-                    <Button>Nuevo cliente</Button>
+                    <Button onClick={this.props.showModalRegistrar}>Nuevo cliente</Button>
                 </Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
                 <Form inline>
